@@ -1,0 +1,24 @@
+{
+  "name": "layerr-smart-contracts",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Layerr",
+  "license": "Business Source License 1.1",
+  "dependencies": {
+    "@metamask/eth-sig-util": "^5.1.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.8",
+    "@nomicfoundation/hardhat-verify": "^1.0.3",
+    "dotenv": "^16.0.3",
+    "operator-filter-registry": "^1.4.1",
+    "solidity-docgen": "^0.6.0-beta.35",
+    "solmate": "^6.6.1",
+    "web3": "^1.8.2",
+    "web3-utils": "^1.7.1",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@openzeppelin/contracts": "^4.8.3",
+    "hardhat": "^2.15.0"
+  }
+}
