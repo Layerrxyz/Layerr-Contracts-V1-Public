@@ -19,6 +19,9 @@ contract LayerrProxy {
     /// @dev the implementation address for the proxy contract
     address immutable proxy;
 
+    /// @dev this is included as a hint for block explorers
+    bytes32 private constant PROXY_IMPLEMENTATION_REFERENCE = 0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc;
+
     /// @dev Thrown when a required initialization call fails
     error DeploymentFailed();
 
@@ -51,17 +54,20 @@ contract LayerrProxy {
         StringValue storage symbol;
         AddressValue storage renderer;
         AddressValue storage owner;
+        AddressValue storage explorerProxy;
         /// @solidity memory-safe-assembly
         assembly {
             name.slot := LAYERRTOKEN_NAME_SLOT
             symbol.slot := LAYERRTOKEN_SYMBOL_SLOT
             renderer.slot := LAYERRTOKEN_RENDERER_SLOT
             owner.slot := LAYERROWNABLE_OWNER_SLOT
+            explorerProxy.slot := PROXY_IMPLEMENTATION_REFERENCE
         } 
         name.value = _name;
         symbol.value = _symbol;
         renderer.value = _renderer;
         owner.value = tx.origin;
+        explorerProxy.value = _proxy;
 
         uint256 signersLength = _signers.length;
         for(uint256 signerIndex;signerIndex < signersLength;) {
