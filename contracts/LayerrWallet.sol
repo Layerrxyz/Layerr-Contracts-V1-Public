@@ -7,7 +7,7 @@ pragma solidity ^0.8.20;
  * @notice A multi-sig smart contract wallet with support for
  *         both transactions that are chain-specific and 
  *         transactions that are replayable on all chains that
- *         the contract is deployed on.
+ *         the contract is deployed on. 
  */
 contract LayerrWallet {
 
